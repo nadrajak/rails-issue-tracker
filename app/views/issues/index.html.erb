@@ -1,0 +1,41 @@
+<div class="container">
+  <br>
+  <%= link_to "New issue", new_issue_path, class:"btn btn-primary w-100" %>
+  <br>
+  <br>
+
+  <%= render "search_form" %>
+  <br>
+
+  <table class="table table-light" >
+    <thead>
+      <tr class=""> 
+        <th> <%= sort_link(@query, :title, "Title") %> </th>
+        <th> <%= sort_link(@query, :author_name, "Author") %> </th>
+        <th> <%= sort_link(@query, :assignee_name, "Assignee") %> </th>
+        <%# In order to sort correctly we would need to implement custom ransacker? (which i failed to do) %>
+        <th> Status <%#= sort_link(@query, :status, "Status") %> </th>
+        <th> Priority <%#= sort_link(@query, :priority, "Priority") %> </th>
+        <th> <%= sort_link(@query, :content_body, "Body") %> </th>
+        
+        <th> Comments </th>
+        <th> <%= sort_link(@query, :created_at, "Created") %> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @issues.each do |issue| %>
+        <tr>
+          <td> <%= link_to issue.title.truncate_words(5).truncate(25), issue %> </td>
+          <td> <%= issue.author.name.truncate(12) %> </td>
+          <td> <%= issue.assignee.nil? ? "" : issue.assignee.name.truncate(12) %> </td>
+          <td> <%= issue.status %> </td>
+          <td> <%= issue.priority %> </td>
+          <td> <%= issue.body.to_plain_text.truncate_words(10).truncate(50) %> </td>
+          <td> <%= issue.comments.count %> </td>
+          <td> <%= "#{time_ago_in_words(issue.created_at)} ago" %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

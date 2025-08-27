@@ -1,0 +1,64 @@
+<%= search_form_for(@query, url: issues_path, method: :get) do |form| %>
+  <%# find more: https://activerecord-hackery.github.io/ransack/getting-started/search-matches/ %>
+
+  <%# This should be a collapse, but that would require JS to make 'not annoying' to use (resets on refresh) %>
+  <%# <div class="collapse" id="collapseFilters"> %>
+    <br>
+    <div class="d-flex">
+      <div class="input-group">
+        <div class="input-group-text"> Author </div>
+        <%=
+          form.search_field :author_name_cont_any,
+            placeholder: "...",
+            class: "form-control me-2"
+        %>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-text"> Assignee </div>
+        <%=
+          form.search_field :assignee_name_cont_any,
+            placeholder: "...",
+            class: "form-control me-2"
+        %>
+      </div>
+      
+      <%# This should probably be a select %>
+      <div class="input-group">
+        <div class="input-group-text"> Status </div>
+        <%=
+          form.search_field :status_cont_any,
+            placeholder: "...",
+            class: "form-control me-2"
+        %>
+      </div>
+
+      <%# This should probably be a select %>
+      <div class="input-group">
+        <div class="input-group-text"> Priority </div>
+        <%=
+          form.search_field :priority_cont_any,
+            placeholder: "...",
+            class: "form-control me-2"
+        %>
+      </div>
+    </div>
+  <%# </div> %>
+
+  <br>
+  <div class="d-flex">
+    <%= 
+      form.search_field :title_or_content_body_or_status_or_priority_or_author_name_or_assignee_name_cont_any,
+        placeholder: "Search issues...",
+        class: "form-control me-2"
+    %>
+
+    <%# <button class="btn btn-primary me-2 w-25" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
+      Filter Options
+    </button> %>
+
+    <%= form.submit "Search", class: "btn btn-outline-primary me-2 w-25" %>
+    <%= link_to "Clear All", issues_path, class: "btn btn-outline-secondary me-2 w-25", id: "reset-button" %>
+  </div>
+  <br>
+<% end %>

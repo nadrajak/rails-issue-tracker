@@ -1,0 +1,8 @@
+<div class="issue-change-<%= version.id %>">
+  <% version_generate_text(issue, version) do |version_text, version_time| %>
+    <div class="d-flex w-100 justify-content-between">
+      <p> <%= version_text %> </p>
+      <p> (<%= version_time %>)</p>
+    </div>
+  <% end %>
+</div>

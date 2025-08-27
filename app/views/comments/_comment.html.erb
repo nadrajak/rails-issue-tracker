@@ -1,0 +1,43 @@
+<div class="comment-<%= comment.id %> container border rounded">
+  <br />
+  <%= comment.user.email %>
+  
+  <span> (Posted <%= time_ago_in_words(comment.created_at) %> ago) </span>
+   
+  <% if current_user == comment.user %>
+    <div class="d-flex float-end">
+      <%= link_to "Edit", nil, remote: true, class: "btn btn-warning me-2",
+        data: {
+          controller: "comments",
+          action: "comments#toggleForm",
+          comments_form_param: "edit-form-#{comment.id}",
+          comments_body_param: "comment-body-#{comment.id}",
+          comments_edit_param: "edit-button-#{comment.id}",
+        },
+        id: "edit-button-#{comment.id}"
+      %>
+      <%= button_to "Delete", [issue, comment], class: "btn btn-danger me-2", method: :delete %>
+    </div>
+
+    <hr /> 
+
+    <%# Invisible edit form -- we will make it visible in JS on button click %>
+    <div id="edit-form-<%= comment.id %>", class="d-none">
+      <%= render 'comments/form', issue: @issue, comment: comment, submit_label: "Update" %>
+      <br />
+    </div>
+  <% else %>
+    <hr /> 
+  <% end %>
+
+  <div id="comment-body-<%= comment.id %>">
+    <%= comment.body %>
+    <br />
+  </div>
+
+  <% if (comment.updated_at - comment.created_at) > 1 %>
+    <span> (Edited <%= time_ago_in_words(comment.updated_at) %> ago) </span>
+    <br />
+    <br />
+  <% end %>
+</div>

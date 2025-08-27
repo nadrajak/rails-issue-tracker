@@ -1,0 +1,12 @@
+<div class="container">
+  <br>
+  <h1>Editing issue</h1>
+
+  <%= render "form", issue: @issue %>
+
+  <br>
+  <div>
+    <%= link_to "Show this issue", @issue, class:"btn btn-secondary me-2" %>
+    <%= link_to "Back to issues", issues_path, class:"btn btn-secondary me-2" %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="<%= dom_id issue %>">
+  <br>
+  <h1> <%= issue.title %> </h1>
+
+  <p>
+    <%= issue.body %>
+  </p>
+
+  <br>
+  <p>
+    <strong>Author:</strong>
+    <%= issue.author.email %>
+  </p>
+
+  <p>
+    <strong>Assignee:</strong>
+    <%= issue.assignee.nil? ? "" : issue.assignee.email %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= issue.status %>
+  </p>
+
+  <p>
+    <strong>Priority:</strong>
+    <%= issue.priority %>
+  </p>
+
+</div>

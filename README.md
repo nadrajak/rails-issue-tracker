@@ -1,8 +1,10 @@
 # rails-issue-tracker
 A simple issue tracker in Ruby on Rails, built to practice web app development by extending a message board tutorial.
 
-## Features
+## Demo
+<img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/demo.png" alt="Demo img" width="100%"/>
 
+## Features
 ### User Accounts
 - Sign up, log in, and edit/cancel accounts
 ### Issues
@@ -16,11 +18,9 @@ A simple issue tracker in Ruby on Rails, built to practice web app development b
 - Data stored in a local Rails database (SQLite by default)
 
 ## Setup
-
 ### Prerequisites
 - [Ruby](https://www.ruby-lang.org/en/) (version 3.2.2)
 - [Bundler](https://bundler.io/)
-
 ### Running
 1. **Clone the repository:**
     ```
@@ -31,12 +31,10 @@ A simple issue tracker in Ruby on Rails, built to practice web app development b
     ```
     bundle install
     ```
-
 3. **Setup a local Rails database:**
     ```
     rails db:setup
     ```
-
 4. **Start Rails server:**
     ```
     rails s

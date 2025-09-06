@@ -16,9 +16,9 @@ A simple issue tracker in Ruby on Rails, built to practice web app development b
 
 ## Demo
 <p align="middle">
-    <img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/docs/demo_issue_list.png" alt="Demo img of an issue list" width="49%"/>
+    <img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/docs/demo_issue_list.png" alt="Demo img of an issue list" width="100%"/>
     &nbsp;&nbsp;
-    <img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/docs/demo_issue.png" alt="Demo img of an individual issue" width="49%"/>
+    <img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/docs/demo_issue.png" alt="Demo img of an individual issue" width="100%"/>
 </p>
 
 ## Setup

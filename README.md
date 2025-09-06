@@ -14,6 +14,13 @@ A simple issue tracker in Ruby on Rails, built to practice web app development b
 ### Persistence
 - Data stored in a local Rails database (SQLite by default)
 
+## Demo
+<p align="middle">
+    <img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/docs/demo_issue_list.png" alt="Demo img of an issue list" width="49%"/>
+    &nbsp;&nbsp;
+    <img src="https://github.com/nadrajak/rails-issue-tracker/blob/main/docs/demo_issue.png" alt="Demo img of an individual issue" width="49%"/>
+</p>
+
 ## Setup
 ### Prerequisites
 - [Ruby](https://www.ruby-lang.org/en/) (version 3.2.2)
